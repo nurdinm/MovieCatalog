@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="6dp"
+    android:layout_marginBottom="12dp"
+    android:fillViewport="true"
+    tools:context=".ui.detail.DetailFilmActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_poster"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            app:cardCornerRadius="4dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/img_poster"
+                android:layout_width="160dp"
+                android:layout_height="240dp"
+                android:src="@color/colorPrimaryDark"
+                tools:ignore="ContentDescription" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/DetailMovie"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:ellipsize="end"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintStart_toEndOf="@id/cv_poster"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="MovieTitle"/>
+
+        <TextView
+            android:id="@+id/tv_titleof_tahun"
+            style="@style/DetailMovie"
+            android:text="@string/released"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/cv_poster"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <TextView
+            android:id="@+id/tv_tahun"
+            style="@style/SubDetailMovie"
+            app:layout_constraintTop_toBottomOf="@id/tv_titleof_tahun"
+            app:layout_constraintStart_toEndOf="@id/cv_poster"
+            tools:text="(Year)"/>
+
+        <TextView
+            android:id="@+id/tv_titleof_lang"
+            style="@style/DetailMovie"
+            android:text="@string/original_language"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/cv_poster"
+            app:layout_constraintTop_toBottomOf="@id/tv_tahun" />
+
+        <TextView
+            android:id="@+id/tv_lang"
+            style="@style/SubDetailMovie"
+            app:layout_constraintTop_toBottomOf="@id/tv_titleof_lang"
+            app:layout_constraintStart_toEndOf="@id/cv_poster"
+            tools:text="English"/>
+
+        <TextView
+            android:id="@+id/tv_titleof_runtime"
+            style="@style/DetailMovie"
+            android:text="@string/runtime"
+            app:layout_constraintStart_toEndOf="@id/cv_poster"
+            app:layout_constraintTop_toBottomOf="@id/tv_lang"/>
+
+        <TextView
+            android:id="@+id/tv_runtime"
+            style="@style/SubDetailMovie"
+            app:layout_constraintTop_toBottomOf="@id/tv_titleof_runtime"
+            app:layout_constraintStart_toEndOf="@id/cv_poster"
+            tools:text="2h 29m"/>
+
+        <TextView
+            android:id="@+id/tv_titleof_revenue"
+            style="@style/DetailMovie"
+            android:text="@string/revenue"
+            app:layout_constraintStart_toEndOf="@id/cv_poster"
+            app:layout_constraintTop_toBottomOf="@id/tv_runtime"/>
+
+        <TextView
+            android:id="@+id/tv_revenue"
+            style="@style/SubDetailMovie"
+            app:layout_constraintTop_toBottomOf="@id/tv_titleof_revenue"
+            app:layout_constraintStart_toEndOf="@id/cv_poster"
+            tools:text="$2,046,239,637.00"/>
+
+        <TextView
+            android:id="@+id/tv_titleof_cast"
+            style="@style/DetailMovie"
+            android:text="@string/top_billed_cast"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cv_poster"/>
+
+        <TextView
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:layout_marginTop="6dp"
+            android:background="#e3e3e3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_titleof_cast"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rv_cast"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider"/>
+
+        <TextView
+            android:id="@+id/tv_titleof_genre"
+            style="@style/DetailMovie"
+            android:text="@string/genre"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rv_cast"/>
+
+        <TextView
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:layout_marginTop="6dp"
+            android:background="#e3e3e3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_titleof_genre"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rv_genre"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider2"/>
+
+        <TextView
+            android:id="@+id/tv_titleof_desc"
+            style="@style/DetailMovie"
+            android:text="@string/description"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rv_genre"/>
+
+        <TextView
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:layout_marginTop="6dp"
+            android:background="#e3e3e3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_titleof_desc"/>
+
+        <TextView
+            android:id="@+id/tv_desc"
+            style="@style/SubDetailMovie"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider3"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="English"/>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="invisible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
